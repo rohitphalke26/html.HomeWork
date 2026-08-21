@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Structure</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        /* Outer container: div 4 */
+        .div4 {
+            background-color: #ffc0cb; /* Pink background */
+            width: 650px;
+            padding: 20px 40px 40px 40px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            box-sizing: border-box;
+        }
+
+        /* Title inside div 4 */
+        .div4-text {
+            margin-bottom: 20px;
+        }
+
+        /* Common style for inner divs */
+        .inner-div {
+            width: 70%;
+            height: 110px;
+            margin: 30px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000000;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        /* div 1 - Red */
+        .div1 {
+            background-color: #ff2200;
+        }
+
+        /* div 2 - Green */
+        .div2 {
+            background-color: #006400;
+        }
+
+        /* div 3 - Blue */
+        .div3 {
+            background-color: #0d5cce;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Outer div (div 4) -->
+    <div class="div4">
+        <div class="div4-text">div 4</div>
+        
+        <!-- Inner div 1 -->
+        <div class="inner-div div1">div 1</div>
+        
+        <!-- Inner div 2 -->
+        <div class="inner-div div2">div 2</div>
+        
+        <!-- Inner div 3 -->
+        <div class="inner-div div3">div 3</div>
+    </div>
+
+</body>
+</html>

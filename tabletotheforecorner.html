@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Data to Four Corners</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+            color: #f8fafc;
+        }
+
+        /* Center decorative watermark indicator */
+        .center-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .center-indicator h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.08);
+            letter-spacing: 6px;
+            text-transform: uppercase;
+        }
+
+        /* Table taking up full viewport width and height */
+        .four-corner-table {
+            width: 100vw;
+            height: 100vh;
+            border-collapse: collapse;
+            table-layout: fixed;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Each cell gets 50% width & 50% height */
+        .four-corner-table td {
+            width: 50%;
+            height: 50%;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        /* 1. Top Left Alignment */
+        .cell-top-left {
+            vertical-align: top;
+            text-align: left;
+        }
+
+        /* 2. Top Right Alignment */
+        .cell-top-right {
+            vertical-align: top;
+            text-align: right;
+        }
+
+        /* 3. Bottom Left Alignment */
+        .cell-bottom-left {
+            vertical-align: bottom;
+            text-align: left;
+        }
+
+        /* 4. Bottom Right Alignment */
+        .cell-bottom-right {
+            vertical-align: bottom;
+            text-align: right;
+        }
+
+        /* Card styling for paragraph containers inside table cells */
+        .card {
+            display: inline-block;
+            max-width: 360px;
+            background: rgba(30, 41, 59, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            text-align: left; /* Keep internal paragraph text readable */
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(129, 140, 248, 0.5);
+            box-shadow: 0 25px 50px rgba(99, 102, 241, 0.25);
+        }
+
+        /* Badges for corner labels */
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 12px;
+        }
+
+        .badge-tl {
+            background: rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.4);
+        }
+
+        .badge-tr {
+            background: rgba(192, 132, 252, 0.2);
+            color: #c084fc;
+            border: 1px solid rgba(192, 132, 252, 0.4);
+        }
+
+        .badge-bl {
+            background: rgba(52, 211, 153, 0.2);
+            color: #34d399;
+            border: 1px solid rgba(52, 211, 153, 0.4);
+        }
+
+        .badge-br {
+            background: rgba(251, 113, 133, 0.2);
+            color: #fb7185;
+            border: 1px solid rgba(251, 113, 133, 0.4);
+        }
+
+        .card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #f1f5f9;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #94a3b8;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Center Watermark -->
+    <div class="center-indicator">
+        <h2>4 Corners Table</h2>
+    </div>
+
+    <!-- Full Screen HTML Table -->
+    <table class="four-corner-table">
+        <!-- Top Row -->
+        <tr>
+            <!-- Top Left Corner Cell -->
+            <td class="cell-top-left">
+                <div class="card">
+                    <span class="badge badge-tl">Top Left</span>
+                    <h3>Corner 1</h3>
+                    <p>
+                        This table data (&lt;td&gt;) is positioned at the <strong>Top Left</strong> corner of the page. 
+                        The paragraph content is neatly aligned inside this table cell using HTML and CSS.
+                    </p>
+                </div>
+            </td>
+
+            <!-- Top Right Corner Cell -->
+            <td class="cell-top-right">
+                <div class="card">
+                    <span class="badge badge-tr">Top Right</span>
+                    <h3>Corner 2</h3>
+                    <p>
+                        This table data (&lt;td&gt;) is positioned at the <strong>Top Right</strong> corner of the page. 
+                        The paragraph content is aligned vertically to the top and horizontally to the right.
+                    </p>
+                </div>
+            </td>
+        </tr>
+
+        <!-- Bottom Row -->
+        <tr>
+            <!-- Bottom Left Corner Cell -->
+            <td class="cell-bottom-left">
+                <div class="card">
+                    <span class="badge badge-bl">Bottom Left</span>
+                    <h3>Corner 3</h3>
+                    <p>
+                        This table data (&lt;td&gt;) is positioned at the <strong>Bottom Left</strong> corner of the page. 
+                        CSS rules handle the alignment cleanly.
+                    </p>
+                </div>
+            </td>
+
+            <!-- Bottom Right Corner Cell -->
+            <td class="cell-bottom-right">
+                <div class="card">
+                    <span class="badge badge-br">Bottom Right</span>
+                    <h3>Corner 4</h3>
+                    <p>
+                        This table data (&lt;td&gt;) is positioned at the <strong>Bottom Right</strong> corner of the page. 
+                        The paragraph text is stored securely within the final table cell.
+                    </p>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
