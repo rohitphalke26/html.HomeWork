@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light Homework - CSS and Div</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #ffffff;
+        }
+
+        /* Traffic Light Box Outer Border */
+        .traffic-light {
+            width: 200px;
+            height: 420px;
+            border: 3px solid #000000;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        /* Circle Lights */
+        .light {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        .red-light {
+            background-color: #ff3b30;
+            /* Red */
+        }
+
+        .yellow-light {
+            background-color: #ff9500;
+            /* Yellow / Orange */
+        }
+
+        .green-light {
+            background-color: #00873d;
+            /* Green */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Traffic Light Box Container -->
+    <div class="traffic-light">
+        <div class="light red-light"></div>
+        <div class="light yellow-light"></div>
+        <div class="light green-light"></div>
+    </div>
+
+</body>
+
+</html>
